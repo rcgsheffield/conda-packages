@@ -1,0 +1,18 @@
+--- setup_build.py	2015-11-20 10:28:34.908620067 +0000
++++ setup_build.py	2015-11-20 10:21:44.250254060 +0000
+@@ -169,6 +169,15 @@
+         
+         # Run Cython
+         print("Executing cythonize()")
++        try:
++            import mpi4py
++            include_path = [mpi4py.get_include()]
++        except:
++            include_path = []
++        self.extensions = cythonize(self._make_extensions(config),
++                                    include_path=include_path,
++                                    force=config.rebuild_required or self.force)
++
+         self.extensions = cythonize(self._make_extensions(config),
+                             force=config.rebuild_required or self.force)
+         self.check_rerun_cythonize()

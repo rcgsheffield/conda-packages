@@ -1,0 +1,23 @@
+package:
+  name: openmpi
+  version: 1.10.0
+
+source:
+  fn: openmpi-1.10.0.tar.bz2
+  url: https://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.0.tar.bz2
+  md5: 280cf952de68369cebaca886c5ce0304
+
+about:
+  home: http://www.open-mpi.org/
+  license: new BSD  (http://www.open-mpi.org/community/license.php)
+
+build:
+    features:
+        - openmpi
+    track_features:
+        - openmpi
+
+test:
+    commands:
+        - ompi_info
+          #- mpirun -n 1 echo hi

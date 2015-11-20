@@ -1,0 +1,70 @@
+package:
+  name: h5py
+  version: "2.5.0"
+
+source:
+  fn: h5py-2.5.0.tar.gz
+  url: https://pypi.python.org/packages/source/h/h5py/h5py-2.5.0.tar.gz
+  md5: 6e4301b5ad5da0d51b0a1e5ac19e3b74
+  patches:
+    - setup.patch
+    - h5p.patch
+
+build:
+    features:
+        - openmpi
+    track_features:
+        - openmpi
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - numpy >=1.6.1
+    - cython >=0.17
+    - six
+    - openmpi
+    - hdf5
+    - mpi4py
+    - pkgconfig
+
+  run:
+    - python
+    - numpy >=1.6.1
+    - cython >=0.17
+    - six
+    - openmpi
+    - hdf5
+    - mpi4py
+    - pkgconfig
+
+#test:
+#  # Python imports
+#  #imports:
+#  #  - h5py
+#  #  - h5py._hl
+#  #  - h5py.tests
+#  #  - h5py.tests.hl
+#  #  - h5py.tests.old
+#
+#   commands:
+#    # You can put test commands to be run here.  Use this to test that the
+#    # entry points work.
+#       - mpirun -n 1 python -c "import h5py; h5py.run_tests()"
+#
+#
+#  # You can also put a file called run_test.py in the recipe that will be run
+#  # at test time.
+#
+#  # requires:
+#    # Put any additional test requirements here.  For example
+#    # - nose
+
+about:
+  home: http://www.h5py.org
+  license: BSD License
+  summary: 'Read and write HDF5 files from Python'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

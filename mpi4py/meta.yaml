@@ -1,0 +1,50 @@
+package:
+  name: mpi4py
+  version: "2.0.0"
+
+source:
+  fn: mpi4py-2.0.0.tar.gz
+  url: https://pypi.python.org/packages/source/m/mpi4py/mpi4py-2.0.0.tar.gz
+  md5: 4f7d8126d7367c239fd67615680990e3
+
+build:
+    features:
+        - openmpi
+    track_features:
+        - openmpi
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - openmpi
+
+  run:
+    - python
+    - openmpi
+
+test:
+  # Python imports
+  imports:
+    - mpi4py
+
+  # commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  # requires:
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: https://bitbucket.org/mpi4py/mpi4py/
+  license: BSD License
+  summary: 'Python bindings for MPI'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

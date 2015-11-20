@@ -1,0 +1,20 @@
+--- h5py/h5p.pyx	2015-11-20 10:28:34.911953278 +0000
++++ h5py/h5p.pyx	2015-11-20 10:29:58.835556061 +0000
+@@ -25,7 +25,7 @@
+ from ._objects import phil, with_phil
+ 
+ if MPI:
+-    from mpi4py.mpi_c cimport MPI_Comm, MPI_Info, MPI_Comm_dup, MPI_Info_dup, \
++    from mpi4py.libmpi cimport MPI_Comm, MPI_Info, MPI_Comm_dup, MPI_Info_dup, \
+                                MPI_Comm_free, MPI_Info_free
+ 
+ # Initialization
+@@ -1001,7 +1001,7 @@
+             Comm: An mpi4py.MPI.Comm instance
+             Info: An mpi4py.MPI.Info instance
+             """
+-            H5Pset_fapl_mpio(self.id, comm.ob_mpi, info.ob_mpi) 
++            H5Pset_fapl_mpio(self.id, comm.ob_mpi, info.ob_mpi)
+ 
+ 
+         @with_phil
