@@ -1,14 +1,14 @@
 package:
   name: h5py
-  version: "2.5.0"
+  version: "2.6.0"
 
 source:
-  fn: h5py-2.5.0.tar.gz
-  url: https://pypi.python.org/packages/source/h/h5py/h5py-2.5.0.tar.gz
-  md5: 6e4301b5ad5da0d51b0a1e5ac19e3b74
-  patches:
-    - setup.patch
-    - h5p.patch
+  fn: h5py-2.6.0.tar.gz
+  url: https://pypi.python.org/packages/source/h/h5py/h5py-2.6.0.tar.gz
+  md5: ec476211bd1de3f5ac150544189b0bf4
+#  patches:
+#    - setup.patch
+#    - h5p.patch
 
 build:
     features:

@@ -1,11 +1,13 @@
+{% set version = "2.0.1" %}
+{% set minor_version = ".".join(version.split(".")[:2]) %}
 package:
   name: openmpi
-  version: 1.10.0
+  version: {{ version }}
 
 source:
-  fn: openmpi-1.10.0.tar.bz2
-  url: https://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.0.tar.bz2
-  md5: 280cf952de68369cebaca886c5ce0304
+  fn: openmpi-{{ version }}.tar.bz2
+  url: https://www.open-mpi.org/software/ompi/v{{ minor_version }}/downloads/openmpi-{{ version }}.tar.bz2
+  md5: 6f78155bd7203039d2448390f3b51c96
 
 about:
   home: http://www.open-mpi.org/
