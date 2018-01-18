@@ -31,4 +31,4 @@ in the central repo. This will be changed.
 Once there is a package in the `/usr/local/packages6/conda/conda-bld/linux-64`
 directory (and the package list is upto date) you can install it following the
 isntructions here:
-http://rcg.group.shef.ac.uk/iceberg/software/apps/python.html#using-python-with-mpi
+http://docs.iceberg.shef.ac.uk/en/latest/iceberg/software/apps/python.html#using-python-with-mpi
