@@ -1,11 +1,12 @@
+{% set version = "3.0.1" %}
 package:
   name: mpi4py
-  version: "2.0.0"
+  version: {{ version }}
 
 source:
-  fn: mpi4py-2.0.0.tar.gz
-  url: https://pypi.python.org/packages/source/m/mpi4py/mpi4py-2.0.0.tar.gz
-  md5: 4f7d8126d7367c239fd67615680990e3
+  fn: mpi4py-{{ version }}.tar.gz
+  url: https://pypi.python.org/packages/source/m/mpi4py/mpi4py-{{ version }}.tar.gz
+  md5: 969bcde3188fb98e0be61b5d78a8745f
 
 build:
     features:
@@ -27,6 +28,9 @@ test:
   # Python imports
   imports:
     - mpi4py
+    - mpi4py.rc
+    - mpi4py.dl # [not win]
+    - mpi4py.MPI
 
   # commands:
     # You can put test commands to be run here.  Use this to test that the

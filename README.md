@@ -1,34 +1,36 @@
-iceberg Conda Recipies
-======================
+# ShARC Conda recipies
 
-This repository is for recipies for the Sheffield
-[iceberg](http://rcg.group.shef.ac.uk/iceberg/) cluster.
+This repository contains Conda package recipies for
+the University of Sheffield's [ShARC](http://docs.hpc.shef.ac.uk) HPC cluster.
 
-## Writing Packages
+## Writing packages
 
-Each package should go in its own directory and should be written following the
-documentation here: http://conda.pydata.org/docs/building/build.html
+Each package should go in its own directory and
+should be written following the [Conda documentation on package building](https://conda.pydata.org/docs/building/build.html).
 
-## Building Packages
+## Building packages
 
 Once you have written a recipie you can build it using:
 
-    conda build mypackage_dir
+```sh
+conda build mypackage_dir
+```
 
-You will need the `apps/python/conda` package loaded, you should be in the
-default (root) environment.
+You will need the `apps/python/conda` [environment module loaded](http://docs.hpc.shef.ac.uk/en/latest/hpc/modules.html) and 
+you should be in the default (`root`) Conda environment.
 
 If you want to build for different Python versions other than the default
 Python 3.4 you need to specify them:
 
-    conda build --python 2.7 --python 3.5 mypackage_dir
+```sh
+conda build --python 2.7 --python 3.5 --python 3.6 mypackage_dir
+```
 
-Note: Currently you need to build the packages as root to make them availible
-in the central repo. This will be changed.
+Note: To build packages need to make sure you have write-access to `/usr/local/packages/apps/conda/conda-bld/`.
 
 ## Installing Packages
 
-Once there is a package in the `/usr/local/packages6/conda/conda-bld/linux-64`
-directory (and the package list is upto date) you can install it following the
-isntructions here:
-http://docs.iceberg.shef.ac.uk/en/latest/iceberg/software/apps/python.html#using-python-with-mpi
+Once there is a package in the `/usr/local/packages/apps/conda/conda-bld/linux-64` directory 
+(and the package list is up-to-date) 
+you can install it into an arbitrary conda environment on ShARC by 
+following [these instructions](http://docs.hpc.shef.ac.uk/en/latest/sharc/software/apps/python.html#using-python-with-mpi).
