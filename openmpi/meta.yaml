@@ -19,6 +19,7 @@ requirements:
     - mpich2
 
 build:
+  number: 1
   features:
     - openmpi
   track_features:

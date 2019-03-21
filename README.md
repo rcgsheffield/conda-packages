@@ -3,6 +3,10 @@
 This repository contains Conda package recipies for
 the University of Sheffield's [ShARC](http://docs.hpc.shef.ac.uk) HPC cluster.
 
+These include OpenMPI (and packages that depend on OpenMPI) built with support for:
+ - the high-bandwidth, low-latency Intel Omni-Path interconnects used in ShARC
+ - the Grid Engine job scheduler
+
 ## Writing packages
 
 Each package should go in its own directory and
